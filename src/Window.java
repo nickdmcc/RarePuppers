@@ -42,6 +42,7 @@ public class Window {
 		setFrame(frame);
 		setButton(button);
 		setTracker(0);
+		getFrame().setVisible(true);
 	}
 	
 	/*
@@ -55,7 +56,6 @@ public class Window {
 		getFrame().setSize(1000, 1000);
 		getFrame().setLocationRelativeTo(null);
 		getFrame().setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-		getFrame().setVisible(true);
 	}
 	
 	/*
@@ -199,17 +199,5 @@ public class Window {
 		this.doggos = doggos;
 	}
 	
-	public static void main(String[] args) {
-		Picture i = new Picture();
-		i.setHtml("https://www.reddit.com/r/rarepuppers/");
-		i.createHtmlDoc(i.getHtml());
-		i.findNextPage(i.getHtml());
-		Window window = new Window();
-		window.createWindow();
-		window.setDoggos(i.parseHtmlString(i.getHtml()));
-		window.createLabel(window.getFrame(), window.getDoggos());
-		window.createButton(window.getFrame(), window.getButton(), i);
-		
-	}
 
 }

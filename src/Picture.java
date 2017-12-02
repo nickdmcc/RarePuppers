@@ -38,6 +38,7 @@ public class Picture {
 				}
 				temp = temp.replace("\"", "");
 				temp = "https://www.reddit.com/r/" + temp;
+				break;
 			}
 		}
 		
@@ -53,9 +54,9 @@ public class Picture {
 		int start;
 		int end;
 		for(int i = 0; i < split.length; i++) {
-			if(split[i].contains(".jpg") && split[i].contains("http://i.imgur.com")) {
+			if(split[i].contains(".jpg") && split[i].contains("https://i.imgur.com")) {
 				temp = split[i];
-				start = temp.indexOf("http://i.imgur.com");
+				start = temp.indexOf("https://i.imgur.com");
 				end = temp.indexOf(".jpg");
 				temp = temp.substring(start, end);
 				temp = temp + ".jpg";
@@ -65,6 +66,7 @@ public class Picture {
 		
 		list.addAll(set);
 		return list;
+
 	}
 	
 	public String getHtml() {
